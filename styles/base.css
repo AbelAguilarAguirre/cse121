@@ -1,0 +1,60 @@
+article {
+    margin: 5px;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+h3,p{
+    margin: 0;
+}
+
+body {
+    font-family:'Courier New', Courier, monospace
+}
+
+div {
+    margin: 10px;
+    text-align: center;
+}
+
+footer {
+    background-color: gray;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+header {
+    margin: auto;
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+    min-width: 120px;
+    text-align: right;
+}
+
+main {
+    text-align: center;
+}
+
+
+
+#monsters {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 32.5em) {
+    #monsters {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 64em) {
+    #monsters {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

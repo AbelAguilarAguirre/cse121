@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/base.css">
+    <title>DND Sorter</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h2>Monster Sorter</h2>
+            <p>
+                Sort by:
+                <select id="sortBy">
+                    <option value="NameAscending">Monster Name Ascending</option>
+                    <option value="NameDescending">Monster Name Descending</option>
+                    <option value="ArmorClassAscending">Armor Class Ascending</option>
+                    <option value="ArmorClassDecending">Armor Class Decending</option>
+                    <option value="ChallengeAscending">Challenge Rating Ascending</option>
+                    <option value="ChallengeDecending">Challenge Rating Decending</option>
+                </select>
+            </p>
+            <p>
+                Filter Armor Class:
+                <select id="filterBy">
+                    <option value="All">All</option>
+                    <option value="low">0-8</option>
+                    <option value="medium">9-15</option>
+                    <option value="high">16-30</option>
+                </select>
+                <button id="btnLoad">Filter</button>
+            </p>
+            <div id="monsters">
+            </div>
+        </section>
+    </main>
+    <script src="scripts/project.js"></script>
+</body>
+
+</html>
