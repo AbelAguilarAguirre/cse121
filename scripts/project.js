@@ -1,6 +1,5 @@
 let monsters = [];
 function output(listofmonsters) {
-    monsters = listofmonsters;
     listofmonsters.forEach(function (monster) {
         let article = document.createElement("article");
         let name = document.createElement("h3");
@@ -91,7 +90,7 @@ const filterBy = () => {
     let ac = document.getElementById("filterBy").value;
     reset();
     if (ac == "All") {
-        let filtered = getMonsters();
+        let filtered = monsters;
         output(filtered);
     } else if (ac == "low") {
         let filtered = monsters.filter((monster) => monster["Armor Class"].substring(0, 3) <= 8);
