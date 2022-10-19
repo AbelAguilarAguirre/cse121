@@ -93,19 +93,49 @@ const filterBy = () => {
         let filtered = monsters;
         output(filtered);
     } else if (ac == "low") {
-        let filtered = monsters.filter((monster) => monster["Armor Class"].substring(0, 3) <= 8);
+        let filtered = monsters.filter((monster) => monster["Armor Class"].substring(0, 3) <= 10);
         output(filtered);
     } else if (ac == "medium") {
-        let filtered = monsters.filter((monster) => monster["Armor Class"].substring(0, 3) > 8 && monster["Armor Class"].substring(0, 3) < 16);
+        let filtered = monsters.filter((monster) => monster["Armor Class"].substring(0, 3) > 10 && monster["Armor Class"].substring(0, 3) < 20);
         output(filtered);
     } else {
-        let filtered = monsters.filter((monster) => monster["Armor Class"].substring(0, 3) > 15);
+        let filtered = monsters.filter((monster) => monster["Armor Class"].substring(0, 3) > 19);
         output(filtered);
     }
-    
+};
+const filterByCr = () => {
+    let cr = document.getElementById("filterByCr").value;
+    reset();
+    if (cr == "All") {
+        let filtered = monsters;
+        output(filtered);
+    } else if (cr == "low") {
+        let filtered = monsters.filter(function (monster) {
+            const index1 = monster.Challenge.indexOf("(");
+            return (parseInt(monster.Challenge.valueOf().slice(0, index1)) <= 1);
+        });
+        return output(filtered);
+    } else if (cr == "medium") {
+        let filtered = monsters.filter(function (monster) {
+            const index1 = monster.Challenge.indexOf("(");
+            return (parseInt(monster.Challenge.valueOf().slice(0, index1)) > 1 && (parseInt(monster.Challenge.valueOf().slice(0, index1)) < 5));
+        });
+        return output(filtered);
+    } else if (cr == "high") {
+        let filtered = monsters.filter(function (monster) {
+            const index1 = monster.Challenge.indexOf("(");
+            return (parseInt(monster.Challenge.valueOf().slice(0, index1)) > 5);
+        });
+        return output(filtered);
+    }
 };
 
 const sortElement = document.getElementById("sortBy");
 sortElement.addEventListener("change", sortBy);
 const filterElement = document.getElementById("btnLoad");
 filterElement.addEventListener("click", filterBy);
+const filterCrElement = document.getElementById("btnLoadCr");
+filterCrElement.addEventListener("click", filterByCr);
+
+
+

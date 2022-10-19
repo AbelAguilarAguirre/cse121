@@ -8,6 +8,10 @@ h3,p{
     margin: 0;
 }
 
+.tabs {
+    margin: 5px 5px;
+}
+
 body {
     font-family:'Courier New', Courier, monospace
 }

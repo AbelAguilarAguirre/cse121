@@ -13,7 +13,7 @@
     <main>
         <section>
             <h2>Monster Sorter</h2>
-            <p>
+            <p class="tabs">
                 Sort by:
                 <select id="sortBy">
                     <option value="NameAscending">Monster Name Ascending</option>
@@ -24,15 +24,25 @@
                     <option value="ChallengeDecending">Challenge Rating Decending</option>
                 </select>
             </p>
-            <p>
+            <p class="tabs">
                 Filter Armor Class:
                 <select id="filterBy">
                     <option value="All">All</option>
-                    <option value="low">0-8</option>
-                    <option value="medium">9-15</option>
-                    <option value="high">16-30</option>
+                    <option value="low">0-10</option>
+                    <option value="medium">11-19</option>
+                    <option value="high">20-25</option>
                 </select>
                 <button id="btnLoad">Filter</button>
+            </p>
+            <p class="tabs">
+                Filter Challenge Rating:
+                <select id="filterByCr">
+                    <option value="All">All</option>
+                    <option value="low">0-1</option>
+                    <option value="medium">2-5</option>
+                    <option value="high">6-30</option>
+                </select>
+                <button id="btnLoadCr">Filter</button>
             </p>
             <div id="monsters">
             </div>
