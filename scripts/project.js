@@ -28,6 +28,7 @@ async function getMonsters() {
 }
 
 getMonsters();
+
 function reset() {
     let article = document.getElementById("monsters");
     return (article.innerHTML = "");
